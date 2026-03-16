@@ -1,6 +1,18 @@
 // ===== MASIF SPECIAL - INTERACTIONS =====
 
 document.addEventListener("DOMContentLoaded", () => {
+  // --- Theme Toggle ---
+  const themeToggle = document.getElementById("themeToggle");
+  const savedTheme = localStorage.getItem("masif-theme");
+  if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
+
+  themeToggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    const next = current === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("masif-theme", next);
+  });
+
   // --- Page Loader ---
   const loader = document.getElementById("pageLoader");
   window.addEventListener("load", () => {
