@@ -104,6 +104,23 @@
   filter: brightness(.55) saturate(.9);
 }
 
+/* Hero yazıları her zaman açık renkte kalır — arka plan karanlık görsel */
+[data-theme="light"] .hero-badge,
+[data-theme="light"] .hero h1,
+[data-theme="light"] .hero h1 em,
+[data-theme="light"] .hero-description,
+[data-theme="light"] .hero-cta,
+[data-theme="light"] .hero-scroll {
+  color: #f2e8d8;
+}
+[data-theme="light"] .hero h1 em { color: #c9a26c; }
+[data-theme="light"] .hero-cta {
+  color: #c9a26c;
+  border-color: rgba(201,162,108,.50);
+}
+[data-theme="light"] .hero-badge { color: #c9a26c; }
+[data-theme="light"] .hero-scroll { color: rgba(242,232,216,.55); }
+
 [data-theme="light"] body::before {
   mix-blend-mode: multiply;
   opacity: .025;
