@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", () => {
     setTimeout(() => {
       loader.classList.add("hidden");
-    }, 800);
+    }, 2500);
   });
 
-  // Fallback: hide loader after 3s max
+  // Fallback: hide loader after 5s max
   setTimeout(() => {
     loader.classList.add("hidden");
-  }, 3000);
+  }, 5000);
 
   // --- Navbar Scroll ---
   const navbar = document.getElementById("navbar");
