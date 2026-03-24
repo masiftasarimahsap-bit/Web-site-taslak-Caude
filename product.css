@@ -69,17 +69,23 @@
   background: var(--bg-secondary);
 }
 .gallery-main {
-  aspect-ratio: 4/3;
+  min-height: 360px;
+  max-height: 560px;
   overflow: hidden;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
 }
 .gallery-main img, .gallery-main video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-height: 560px;
+  object-fit: contain;
   transition: transform .6s var(--ease);
 }
-.gallery-main:hover img { transform: scale(1.03); }
+.gallery-main:hover img { transform: scale(1.02); }
 .gallery-thumbs {
   display: flex;
   gap: .5rem;
@@ -203,8 +209,9 @@
 }
 .img-card img, .img-card video {
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
+  aspect-ratio: 3/4;
+  object-fit: contain;
+  background: var(--bg-secondary);
   display: block;
   transition: transform .5s var(--ease);
 }
@@ -226,8 +233,9 @@
 .video-card video {
   width: 100%;
   display: block;
-  max-height: 480px;
-  object-fit: cover;
+  max-height: 600px;
+  object-fit: contain;
+  background: #000;
 }
 .video-grid {
   display: grid;
@@ -256,13 +264,13 @@
   box-shadow: var(--shadow);
 }
 .model-card-img {
-  aspect-ratio: 4/3;
   overflow: hidden;
+  background: var(--bg-secondary);
 }
 .model-card-img img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  aspect-ratio: 4/3;
+  object-fit: contain;
   transition: transform .5s var(--ease);
 }
 .model-card:hover .model-card-img img { transform: scale(1.04); }
