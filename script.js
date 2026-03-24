@@ -441,8 +441,16 @@ function switchGallery(thumb, src, type) {
   const main = document.getElementById('galleryMain');
   if (!main) return;
   if (type === 'video') {
-    main.innerHTML = '<video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:contain;"><source src="' + src + '" type="video/mp4"/></video>';
+    main.innerHTML = '<div style="position:relative;width:100%;height:100%"><video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:contain;"><source src="' + src + '" type="video/mp4"/></video><button class="gallery-mute-btn" onclick="toggleGalleryMute(this)" style="position:absolute;bottom:16px;right:16px;width:44px;height:44px;border-radius:50%;border:none;background:rgba(0,0,0,0.6);color:#fff;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:transform 0.2s ease;" onmouseover="this.style.transform=\'scale(1.1)\'" onmouseout="this.style.transform=\'scale(1)\'">🔇</button></div>';
   } else {
     main.innerHTML = '<img src="' + src + '" alt="Ürün görseli" id="galleryMainImg" data-lightbox="' + src + '" onclick="openLightbox(\'' + src + '\')" style="cursor:pointer"/>';
   }
 }
+
+function toggleGalleryMute(btn) {
+  var video = btn.parentElement.querySelector('video');
+  if (!video) return;
+  video.muted = !video.muted;
+  btn.textContent = video.muted ? '🔇' : '🔊';
+}
+
