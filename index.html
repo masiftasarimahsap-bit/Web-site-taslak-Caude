@@ -74,11 +74,11 @@
       <div class="container">
         <a href="#anasayfa" class="logo">masif<span>.</span></a>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#anasayfa" class="active">Ana Sayfa</a></li>
-          <li><a href="#urunler">Ürünler</a></li>
-          <li><a href="#hakkimizda">Hakkımızda</a></li>
-          <li><a href="#magazalar">Mağazalar</a></li>
-          <li><a href="#iletisim">İletişim</a></li>
+          <li><a href="#anasayfa" class="active" data-i18n="nav_home">Ana Sayfa</a></li>
+          <li><a href="#urunler" data-i18n="nav_products">Ürünler</a></li>
+          <li><a href="#hakkimizda" data-i18n="nav_about">Hakkımızda</a></li>
+          <li><a href="#magazalar" data-i18n="nav_stores">Mağazalar</a></li>
+          <li><a href="#iletisim" data-i18n="nav_contact">İletişim</a></li>
         </ul>
         <button class="menu-toggle" id="menuToggle" aria-label="Menü">
           <span></span>
@@ -98,14 +98,14 @@
         />
       </div>
       <div class="hero-content">
-        <div class="hero-badge">masif special</div>
-        <h1>El Yapımı Premium<br />Masif Ahşap <em>Ürünler</em></h1>
-        <p class="hero-description">
+        <div class="hero-badge" data-i18n="hero_badge">masif special</div>
+        <h1 data-i18n="hero_title">El Yapımı Premium<br />Masif Ahşap <em>Ürünler</em></h1>
+        <p class="hero-description" data-i18n="hero_desc">
           Her parça, doğanın eşsiz dokusunu premium tasarımla buluşturur. Masif
           ahşabın sıcaklığını, modern çizgilerle yaşam alanlarınıza taşıyoruz.
         </p>
         <a href="#urunler" class="hero-cta">
-          <span>Koleksiyonu Keşfet</span>
+          <span data-i18n="hero_cta">Koleksiyonu Keşfet</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -122,7 +122,7 @@
         </a>
       </div>
       <div class="hero-scroll">
-        <span>Keşfet</span>
+        <span data-i18n="hero_scroll">Keşfet</span>
         <div class="hero-scroll-line"></div>
       </div>
     </section>
@@ -131,9 +131,9 @@
     <section id="urunler">
       <div class="container">
         <div class="products-header reveal">
-          <span class="section-badge">Koleksiyon</span>
-          <h2 class="section-title">El Yapımı Masif Ahşap Ürün Koleksiyonumuz</h2>
-          <p class="section-subtitle">
+          <span class="section-badge" data-i18n="products_label">Koleksiyon</span>
+          <h2 class="section-title" data-i18n="products_title">El Yapımı Masif Ahşap Ürün Koleksiyonumuz</h2>
+          <p class="section-subtitle" data-i18n="products_desc">
             Doğal masif ahşaptan, el işçiliğiyle üretilen her parça eşsiz bir
             hikaye taşır.
           </p>
@@ -580,7 +580,7 @@
             <div class="about-image-accent"></div>
           </div>
           <div class="about-text">
-            <span class="section-badge reveal">Hikayemiz</span>
+            <span class="section-badge reveal" data-i18n="about_label">Hikayemiz</span>
             <h2 class="section-title reveal reveal-delay-1">
               Masif Ahşap El İşçiliği<br />Hikayemiz
             </h2>
@@ -1123,6 +1123,7 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="i18n.js"></script>
 
     <a href="https://wa.me/905067786885" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile iletişime geçin">
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
