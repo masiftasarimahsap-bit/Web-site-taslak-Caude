@@ -348,3 +348,23 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: true },
   );
 });
+
+// ===== VIDEO MUTE TOGGLE =====
+function toggleVideoMute(btn) {
+  const video = btn.closest('.video-card').querySelector('video');
+  video.muted = !video.muted;
+  btn.textContent = video.muted ? '🔇' : '🔊';
+}
+
+// ===== PRODUCT PAGE GALLERY SWITCHER =====
+function switchGallery(thumb, src, type) {
+  document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+  const main = document.getElementById('galleryMain');
+  if (!main) return;
+  if (type === 'video') {
+    main.innerHTML = '<video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:contain;"><source src="' + src + '" type="video/mp4"/></video>';
+  } else {
+    main.innerHTML = '<img src="' + src + '" alt="Ürün görseli" id="galleryMainImg" data-lightbox="' + src + '" onclick="openLightbox(\'' + src + '\')" style="cursor:pointer"/>';
+  }
+}

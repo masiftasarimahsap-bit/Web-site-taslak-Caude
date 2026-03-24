@@ -224,25 +224,63 @@
 }
 
 /* Video card */
-.video-card {
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin-top: 2rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--bg-secondary);
+}
+.video-card {
+  overflow: hidden;
+  background: var(--bg-card);
   position: relative;
 }
 .video-card video {
   width: 100%;
   display: block;
-  max-height: 600px;
-  object-fit: contain;
-  background: #000;
+  aspect-ratio: 9/16;
+  object-fit: cover;
 }
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
+/* Video overlay: dil etiketi + ses butonu */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
 }
+.video-lang {
+  font-family: var(--font-display);
+  font-size: .72rem;
+  letter-spacing: .18em;
+  color: rgba(255,255,255,.75);
+  background: rgba(0,0,0,.35);
+  padding: .25rem .6rem;
+  border-radius: 3px;
+  align-self: flex-start;
+  pointer-events: none;
+}
+.video-mute-btn {
+  align-self: flex-end;
+  pointer-events: all;
+  background: rgba(0,0,0,.45);
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+  color: #fff;
+}
+.video-mute-btn:hover { background: rgba(201,162,108,.6); }
 
 /* Model cards */
 .model-grid {
