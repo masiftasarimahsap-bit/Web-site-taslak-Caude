@@ -349,12 +349,90 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 });
 
-// ===== VIDEO MUTE TOGGLE =====
+// ===== VIDEO MUTE TOGGLE (legacy) =====
 function toggleVideoMute(btn) {
   const video = btn.closest('.video-card').querySelector('video');
   video.muted = !video.muted;
   btn.textContent = video.muted ? '🔇' : '🔊';
 }
+
+// ===== VIDEO SLIDER =====
+(function initVideoSliders() {
+  document.querySelectorAll('.video-slider').forEach(slider => {
+    const track = slider.querySelector('.vs-track');
+    const slides = Array.from(slider.querySelectorAll('.vs-slide'));
+    const prevBtn = slider.querySelector('.vs-prev');
+    const nextBtn = slider.querySelector('.vs-next');
+    const dotsContainer = slider.querySelector('.vs-dots');
+
+    if (!slides.length) return;
+
+    let current = 0;
+
+    // Create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'vs-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function updateDots() {
+      dotsContainer.querySelectorAll('.vs-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function goTo(index) {
+      const prevVideo = slides[current].querySelector('video');
+      if (prevVideo) prevVideo.pause();
+
+      current = (index + slides.length) % slides.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      updateDots();
+
+      const newVideo = slides[current].querySelector('video');
+      if (newVideo) newVideo.play().catch(() => {});
+    }
+
+    prevBtn && prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn && nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    // Touch/swipe
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 45) goTo(diff > 0 ? current + 1 : current - 1);
+    });
+
+    // Pause when scrolled out of view
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const video = slides[current].querySelector('video');
+        if (!video) return;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.25 });
+    observer.observe(slider);
+
+    // Mute buttons
+    slider.querySelectorAll('.vs-mute').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const video = btn.closest('.vs-slide').querySelector('video');
+        video.muted = !video.muted;
+        btn.textContent = video.muted ? '🔇' : '🔊';
+      });
+    });
+  });
+})();
 
 // ===== PRODUCT PAGE GALLERY SWITCHER =====
 function switchGallery(thumb, src, type) {

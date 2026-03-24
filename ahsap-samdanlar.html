@@ -191,43 +191,36 @@
     <div class="container">
       <div class="section-label">Ürün Videoları</div>
       <h2>Torna İşçiliğini <em>İzleyin</em></h2>
-      <div class="video-grid">
-        <div class="video-card">
-          <video autoplay muted loop playsinline>
-            <source src="Ahşap Şamdanlar görsel ve video/hf_20260222_093901_34a46ecc-1d24-45ee-b928-10cef8ce0207.mp4" type="video/mp4"/>
-          </video>
-          <div class="video-overlay">
-            <span class="video-lang">TÜRKÇE</span>
-            <button class="video-mute-btn" onclick="toggleVideoMute(this)">🔇</button>
+      <div class="video-slider">
+        <div class="vs-track">
+          <div class="vs-slide">
+            <video autoplay muted loop playsinline>
+              <source src="Ahşap Şamdanlar görsel ve video/hf_20260222_093901_34a46ecc-1d24-45ee-b928-10cef8ce0207.mp4" type="video/mp4"/>
+            </video>
+            <button class="vs-mute">🔇</button>
+          </div>
+          <div class="vs-slide">
+            <video muted loop playsinline>
+              <source src="Ahşap Şamdanlar görsel ve video/hf_20260222_094100_a4d8f239-7adc-4b81-9cf5-d1bdef2af4ee.mp4" type="video/mp4"/>
+            </video>
+            <button class="vs-mute">🔇</button>
+          </div>
+          <div class="vs-slide">
+            <video muted loop playsinline>
+              <source src="Ahşap Şamdanlar görsel ve video/hf_20260222_135528_1ce8b5ba-d8f1-487f-95d7-8872eb6f259c.mp4" type="video/mp4"/>
+            </video>
+            <button class="vs-mute">🔇</button>
+          </div>
+          <div class="vs-slide">
+            <video muted loop playsinline>
+              <source src="Ahşap Şamdanlar görsel ve video/hf_20260222_145747_25cc74ba-004b-4bf6-be75-d006310dba84.mp4" type="video/mp4"/>
+            </video>
+            <button class="vs-mute">🔇</button>
           </div>
         </div>
-        <div class="video-card">
-          <video autoplay muted loop playsinline>
-            <source src="Ahşap Şamdanlar görsel ve video/hf_20260222_094100_a4d8f239-7adc-4b81-9cf5-d1bdef2af4ee.mp4" type="video/mp4"/>
-          </video>
-          <div class="video-overlay">
-            <span class="video-lang">TÜRKÇE</span>
-            <button class="video-mute-btn" onclick="toggleVideoMute(this)">🔇</button>
-          </div>
-        </div>
-        <div class="video-card">
-          <video autoplay muted loop playsinline>
-            <source src="Ahşap Şamdanlar görsel ve video/hf_20260222_135528_1ce8b5ba-d8f1-487f-95d7-8872eb6f259c.mp4" type="video/mp4"/>
-          </video>
-          <div class="video-overlay">
-            <span class="video-lang">TÜRKÇE</span>
-            <button class="video-mute-btn" onclick="toggleVideoMute(this)">🔇</button>
-          </div>
-        </div>
-        <div class="video-card">
-          <video autoplay muted loop playsinline>
-            <source src="Ahşap Şamdanlar görsel ve video/hf_20260222_145747_25cc74ba-004b-4bf6-be75-d006310dba84.mp4" type="video/mp4"/>
-          </video>
-          <div class="video-overlay">
-            <span class="video-lang">TÜRKÇE</span>
-            <button class="video-mute-btn" onclick="toggleVideoMute(this)">🔇</button>
-          </div>
-        </div>
+        <button class="vs-btn vs-prev">&#8249;</button>
+        <button class="vs-btn vs-next">&#8250;</button>
+        <div class="vs-dots"></div>
       </div>
     </div>
   </section>

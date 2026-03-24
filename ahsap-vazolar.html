@@ -196,25 +196,24 @@
     <div class="container">
       <div class="section-label">Ürün Videoları</div>
       <h2>Canlı <em>Detaylar</em></h2>
-      <div class="video-grid">
-        <div class="video-card">
-          <video autoplay muted loop playsinline>
-            <source src="Ahşap Vazolar/hf_20260221_132703_6fa80f9f-fc52-42f2-90a0-fae186ca2012.mp4" type="video/mp4"/>
-          </video>
-          <div class="video-overlay">
-            <span class="video-lang">TÜRKÇE</span>
-            <button class="video-mute-btn" onclick="toggleVideoMute(this)">🔇</button>
+      <div class="video-slider">
+        <div class="vs-track">
+          <div class="vs-slide">
+            <video autoplay muted loop playsinline>
+              <source src="Ahşap Vazolar/hf_20260221_132703_6fa80f9f-fc52-42f2-90a0-fae186ca2012.mp4" type="video/mp4"/>
+            </video>
+            <button class="vs-mute">🔇</button>
+          </div>
+          <div class="vs-slide">
+            <video muted loop playsinline>
+              <source src="Ahşap Vazolar/hf_20260221_141044_ba2497ab-3002-488f-8da3-b740dbe34c70.mp4" type="video/mp4"/>
+            </video>
+            <button class="vs-mute">🔇</button>
           </div>
         </div>
-        <div class="video-card">
-          <video autoplay muted loop playsinline>
-            <source src="Ahşap Vazolar/hf_20260221_141044_ba2497ab-3002-488f-8da3-b740dbe34c70.mp4" type="video/mp4"/>
-          </video>
-          <div class="video-overlay">
-            <span class="video-lang">TÜRKÇE</span>
-            <button class="video-mute-btn" onclick="toggleVideoMute(this)">🔇</button>
-          </div>
-        </div>
+        <button class="vs-btn vs-prev">&#8249;</button>
+        <button class="vs-btn vs-next">&#8250;</button>
+        <div class="vs-dots"></div>
       </div>
     </div>
   </section>
