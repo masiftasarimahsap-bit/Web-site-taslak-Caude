@@ -5,8 +5,8 @@
 (function () {
   'use strict';
 
-  const API_KEY = [115,107,45,97,110,116,45,97,112,105,48,51,45,113,102,54,113,86,121,87,51,121,98,119,49,50,109,87,99,87,88,66,118,66,78,90,85,68,78,48,56,122,120,45,122,113,111,66,95,98,113,98,105,53,83,74,79,107,71,115,109,48,53,110,52,121,48,71,119,80,105,107,65,105,100,100,78,120,45,75,83,103,110,101,72,79,69,54,102,95,53,99,70,82,122,111,55,56,65,45,45,79,108,78,100,119,65,65].map(c=>String.fromCharCode(c)).join('');
-  const MODEL   = 'claude-haiku-4-5-20251001';
+  const WORKER_URL = 'https://nameless-silence-1f33.dthasanozel92.workers.dev';
+  const MODEL      = 'claude-haiku-4-5-20251001';
   const WHATSAPP_URL = 'https://wa.me/905067786885';
 
   const SYSTEM_PROMPT = `Sen masif.'in yapay zeka destekli müşteri asistanısın. masif., Türkiye'de el yapımı premium ahşap ürünler üreten bir markadır.
@@ -152,13 +152,10 @@ DAVRANIŞ KURALLARI:
   async function askClaude(userMessage) {
     conversationHistory.push({ role: 'user', content: userMessage });
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch(WORKER_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': API_KEY,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-allow-browser': 'true'
       },
       body: JSON.stringify({
         model: MODEL,
