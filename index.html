@@ -90,61 +90,38 @@
     </nav>
 
     <!-- ===== HERO ===== -->
-    <section class="hero hero-shader" id="anasayfa">
-      <!-- Animated mesh gradient background -->
-      <div class="mesh-bg">
-        <div class="mesh-blob mesh-blob-1"></div>
-        <div class="mesh-blob mesh-blob-2"></div>
-        <div class="mesh-blob mesh-blob-3"></div>
-        <div class="mesh-blob mesh-blob-4"></div>
-        <div class="mesh-blob mesh-blob-5"></div>
-        <div class="mesh-grid"></div>
+    <section class="hero" id="anasayfa">
+      <div class="hero-bg">
+        <img
+          src="images/wall_clock_1.jpg"
+          alt="masif. premium ahşap ürünler"
+          loading="eager"
+        />
       </div>
-
-      <!-- Hero content — bottom left -->
       <div class="hero-content">
-        <div class="hero-badge-glass">
-          <div class="hero-badge-top-line"></div>
-          <span data-i18n="hero_badge">✨ masif special</span>
-        </div>
-        <h1>
-          <span class="hero-line-gradient" data-i18n="hero_title_1">El Yapımı</span>
-          <span class="hero-line-bold">Premium</span>
-          <span class="hero-line-italic">Ahşap</span>
-        </h1>
+        <div class="hero-badge" data-i18n="hero_badge">masif special</div>
+        <h1 data-i18n="hero_title">El Yapımı Premium<br />Masif Ahşap <em>Ürünler</em></h1>
         <p class="hero-description" data-i18n="hero_desc">
           Her parça, doğanın eşsiz dokusunu premium tasarımla buluşturur. Masif
           ahşabın sıcaklığını, modern çizgilerle yaşam alanlarınıza taşıyoruz.
         </p>
-        <div class="hero-actions">
-          <a href="#urunler" class="hero-btn-outline">
-            <span data-i18n="hero_cta">Koleksiyonu Keşfet</span>
-          </a>
-          <a href="https://wa.me/905067786885" class="hero-btn-gradient" target="_blank" rel="noopener noreferrer">
-            Sipariş Ver →
-          </a>
-        </div>
+        <a href="#urunler" class="hero-cta">
+          <span data-i18n="hero_cta">Koleksiyonu Keşfet</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
+        </a>
       </div>
-
-      <!-- Pulsing ring — bottom right -->
-      <div class="hero-pulse-wrap">
-        <div class="hero-pulse-ring">
-          <div class="hero-pulse-core"></div>
-          <div class="hero-pulse-wave"></div>
-          <div class="hero-pulse-wave hero-pulse-wave-2"></div>
-        </div>
-        <svg class="hero-pulse-text" viewBox="0 0 100 100">
-          <defs>
-            <path id="pulseCircle" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
-          </defs>
-          <text fill="rgba(255,255,255,0.65)" font-size="6.5" font-family="DM Sans,sans-serif" letter-spacing="1.5">
-            <textPath href="#pulseCircle" startOffset="0%">
-              masif. • el yapımı ahşap • premium • masif. • el yapımı ahşap •
-            </textPath>
-          </text>
-        </svg>
-      </div>
-
       <div class="hero-scroll">
         <span data-i18n="hero_scroll">Keşfet</span>
         <div class="hero-scroll-line"></div>
